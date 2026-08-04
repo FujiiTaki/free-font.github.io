@@ -1,5 +1,22 @@
 [
   {
+    "name": "秋叶圆体-16",
+    "path": "fonts/其他字体/秋叶圆体-16.ttf",
+    "home": "https://github.com/yzdnn/QiuYeYuanTi-16",
+    "license": "OFL-1.1", 
+    "type":"艺术体",
+    "size": "4.33 MB",
+    "byte": 4329132,
+    "ctime": 1785827270788,
+    "postscriptName": "QiuYeYuanTi-16",
+    "fullName": "QiuYeYuanTi 16",
+    "familyName": "QiuYeYuanTi 16",
+    "subfamilyName": "Regular",
+    "version": "1.0.1",
+    "copyright": "Copyright (c) 2025-2026, yzdnn (https://github.com/yzdnn), Copyright (c) Keitarou Hiraki, Font Silo. 1990-2015",
+    "numGlyphs": 14119
+  },
+  {
     "name": "CozetteCrossedSevenVectorBold",
     "path": "fonts/english/Cozette/CozetteCrossedSevenVectorBold.ttf",
     "home": "https://github.com/slavfox/Cozette",
