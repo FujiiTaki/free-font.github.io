@@ -1,5 +1,19 @@
 [
   {
+    "name": "粉圓",
+    "path": "fonts/其他字体/粉圓.ttf",
+    "size": "4.69 MB",
+    "byte": 4688264,
+    "ctime": 1785850588899,
+    "postscriptName": "Huninn-Regular",
+    "fullName": "Huninn Regular",
+    "familyName": "Huninn",
+    "subfamilyName": "Regular",
+    "version": "1.003",
+    "copyright": "Copyright (c) 2025 The Huninn Project (https://github.com/justfont/Huninn)",
+    "numGlyphs": 11609
+  },
+  {
     "name": "Ririgitriz",
     "path": "fonts/english/other/Ririgitriz.ttf",
     "size": "27.2 kB",
