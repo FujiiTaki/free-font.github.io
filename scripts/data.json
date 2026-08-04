@@ -1,5 +1,19 @@
 [
   {
+    "name": "人偶仿宋",
+    "path": "fonts/其他字体/人偶仿宋.ttf",
+    "size": "4.71 MB",
+    "byte": 4707760,
+    "ctime": 1785834261660,
+    "postscriptName": "RenOuFangSong-16",
+    "fullName": "RenOuFangSong 16",
+    "familyName": "RenOuFangSong 16",
+    "subfamilyName": "Regular",
+    "version": "1.1.1",
+    "copyright": "Copyright (c) 2025-2026, yzdnn (https://github.com/yzdnn), Copyright (c) Keitarou Hiraki, Font Silo. 1990-2015",
+    "numGlyphs": 13769
+  },
+  {
     "name": "长坂点宋-TC",
     "path": "fonts/长坂点宋/长坂点宋-TC.ttf",
     "home": "https://github.com/yzdnn/ChangBanDianSong-16",
