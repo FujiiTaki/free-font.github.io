@@ -1,5 +1,21 @@
 [
   {
+    "name": "NegaTape",
+    "path": "fonts/english/other/NegaTape.ttf",
+    "home": "https://github.com/hicchicc/x5y8pxNegaTape",
+    "license": "OFL-1.1",
+    "size": "44.8 kB",
+    "byte": 44788,
+    "ctime": 1785853265064,
+    "postscriptName": "x5y8pxNegaTape",
+    "fullName": "x5y8pxNegaTape",
+    "familyName": "x5y8pxNegaTape",
+    "subfamilyName": "Regular",
+    "version": "1.000",
+    "copyright": "Copyright 2026 The x5y8pxNegaTape Project Authors (https://github.com/hicchicc/x5y8pxNegaTape)",
+    "numGlyphs": 453
+  },
+  {
     "name": "NegaClip",
     "path": "fonts/english/other/NegaClip.ttf",
     "home": "https://github.com/hicchicc/x5y8pxNegaClip",
