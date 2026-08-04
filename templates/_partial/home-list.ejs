@@ -1,7 +1,8 @@
 <div>
   <% const pageURL = `details/${font.name}.html`; %>
+  <% const imageName = GLOBAL.toImageName ? GLOBAL.toImageName(font.name) : font.name; %>
   <a href="<%=pageURL%>" title="<%=font.name%>">
-    <img src="./images/<%=font.name%>-poster.jpg" loading="lazy" alt="<%=font.name%>">
+    <img src="./images/<%=imageName%>-poster.jpg" loading="lazy" alt="<%=font.name%>">
     <p>
       <span><%=font.name%></span>
       <span class="license">

@@ -13,6 +13,8 @@
     "one:info": "node scripts/main.mjs -i",
     "one:info:all": "node scripts/main.mjs -info",
     "one": "node scripts/main.mjs -a",
+    "rename:images": "node scripts/rename-images.mjs",
+    "rename:images:dry": "node scripts/rename-images.mjs --dry-run",
     "build:docker": "ejsc \"templates/**/*\" -o \"docs\" --global-data '{\"docker\": true}'",
     "start": "ejsc \"templates/**/*\" -o \"docs\"",
     "dev": "ejsc \"templates/**/*\" -o \"docs\" -w"
@@ -28,6 +30,7 @@
     "@wcj/ejs-cli": "^3.2.0",
     "fontkit": "^2.0.4",
     "fs-extra": "^11.2.0",
+    "pinyin": "^4.0.0",
     "pretty-bytes": "^6.1.1",
     "puppeteer": "24.37.2"
   },

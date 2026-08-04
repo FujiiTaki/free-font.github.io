@@ -9,7 +9,8 @@ import * as estreePlugin from 'prettier/plugins/estree';
 import { parsers as babelPlugin } from 'prettier/plugins/babel';
 import { parsers as typescriptPlugin } from 'prettier/plugins/typescript';
 import { parsers as acornPlugin } from 'prettier/plugins/acorn';
-import datas from './scripts/data.json' assert { type: "json" };
+import datas from './scripts/data.json' with { type: "json" };
+import { toImageName } from './scripts/utils.mjs';
 
 const total = datas.reduce((sum, item) => sum + (item.byte ?? 0), 0);
 
@@ -23,6 +24,7 @@ export default {
   "globalData": {
     "docker": false,
     "totalBytes": prettyBytes(total),
+    "toImageName": toImageName,
     "myapp": [
       {
         "href": "https://wangchujiang.com/dock-lift/",

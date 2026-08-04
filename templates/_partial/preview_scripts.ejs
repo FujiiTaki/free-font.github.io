@@ -1,9 +1,19 @@
+<% 
+  const imageNameMap = Object.fromEntries(
+    (typeof DATA !== 'undefined' && Array.isArray(DATA) ? DATA : []).map((f) => [
+      f.name,
+      GLOBAL.toImageName ? GLOBAL.toImageName(f.name) : f.name,
+    ])
+  );
+%>
 <% if (docker == true) { %>
 <script>
   ;(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const fontUrl = urlParams.get('p');
     const fontName = urlParams.get('t');
+    const imageNameMap = <%- JSON.stringify(imageNameMap) %>;
+    const imageFileName = (fontName && imageNameMap[fontName]) || fontName;
 
     const base = window.location.origin;
     const url = new URL(fontUrl, base);
@@ -33,7 +43,7 @@
 
     const preview = document.getElementById('preview')
     if (preview && fontName) {
-      preview.innerHTML = `<img src="./images/${fontName}-preview.jpg" alt="${fontName}" />`;
+      preview.innerHTML = `<img src="./images/${imageFileName}-preview.jpg" alt="${fontName}" />`;
     }
 
     const licenseElement = document.getElementById('license');
@@ -103,6 +113,8 @@
   const urlParams = new URLSearchParams(window.location.search);
   const fontUrl = urlParams.get('p');
   const fontName = urlParams.get('t');
+  const imageNameMap = <%- JSON.stringify(imageNameMap) %>;
+  const imageFileName = (fontName && imageNameMap[fontName]) || fontName;
 
   const base = window.location.origin;
   const url = new URL(fontUrl, base);
@@ -145,7 +157,7 @@
 
   const preview = document.getElementById('preview')
   if (preview && fontName) {
-    preview.innerHTML = `<img src="./images/${fontName}-preview.jpg" alt="${fontName}" />`;
+    preview.innerHTML = `<img src="./images/${imageFileName}-preview.jpg" alt="${fontName}" />`;
   }
 
   if (!fontUrl || !fontName) {

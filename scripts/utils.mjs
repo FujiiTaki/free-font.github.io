@@ -3,11 +3,17 @@ import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { openSync } from 'fontkit';
+import pinyin from 'pinyin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const outputDir = path.join(__dirname, '../docs/');
+
+const pinyinFn = pinyin.default || pinyin;
+
+/** CJK Unified Ideographs (incl. common traditional forms) */
+const CJK_PATTERN = /[\u3400-\u9fff]/;
 
 /* 是否存在汉字 */
 function containsNoChineseCharacters(str) {
@@ -15,6 +21,24 @@ function containsNoChineseCharacters(str) {
   const chineseCharacterPattern = /[\u4e00-\u9fa5]/;
   // 测试字符串中是否包含中文汉字
   return !chineseCharacterPattern.test(str);
+}
+
+/**
+ * Convert a font/display name to a filesystem-safe image base name.
+ * Chinese characters become pinyin letters; Latin/digits/symbols are kept.
+ * e.g. "多彩立直麻将字体" -> "duocailizhimajiangziti"
+ *      "Aa剑豪体" -> "Aajianhaoti"
+ *      "FiraCode-Bold" -> "FiraCode-Bold"
+ * @param {string} name
+ * @returns {string}
+ */
+export function toImageName(name) {
+  if (!name) return name;
+  if (!CJK_PATTERN.test(name)) return name;
+  return pinyinFn(name, { style: pinyinFn.STYLE_NORMAL, heteronym: false })
+    .flat()
+    .join('')
+    .replace(/\s+/g, '');
 }
 
 const chineseCharacterContent = `
@@ -151,6 +175,11 @@ export const generateHTMLContent = (fontPath, fileName, demo) => `<!DOCTYPE html
 </html>
 `;
 
+/**
+ * @param {import('puppeteer').Browser} browser
+ * @param {string} filePath font file path
+ * @param {string} fontName display / data name (may contain Chinese)
+ */
 export async function createPosterImage(browser, filePath, fontName = "") {
   const page = await browser.newPage();
   const fontPath = path.relative(__dirname, path.resolve(filePath)).split(path.sep).join("/");
@@ -158,6 +187,8 @@ export async function createPosterImage(browser, filePath, fontName = "") {
   /// 英文字体
   const isEnglish = fontPath.split(path.sep).includes("english");
   const fontText = isEnglish ? fontName : (containsNoChineseCharacters(fontName) ? `${fontName}字体` : fontName);
+  /// 图片文件名：中文转拼音字母，避免 URL 含中文
+  const fileBaseName = toImageName(fontName) || fontName;
   let demo = "<div>Hello World! 123</div>";
   if (fontPath.includes("麻将字体")) {
     demo = "<div style=\"font-size: 43px;\">7m7m7m2p3p4p8p8p8p4s</div>";
@@ -173,7 +204,7 @@ export async function createPosterImage(browser, filePath, fontName = "") {
     const deviceScaleFactor = 1;
     await page.setViewport({ width: width, height: height, deviceScaleFactor });
     const buffer = await page.screenshot({ type: 'jpeg' });
-    const fileName = `docs/images/${fontName}-poster.jpg`;
+    const fileName = `docs/images/${fileBaseName}-poster.jpg`;
     fs.writeFileSync(fileName, buffer);
     console.log(`Image created and saved as \x1b[32;1m${fileName}\x1b[0m! ${filePath}`);
 
@@ -199,7 +230,7 @@ export async function createPosterImage(browser, filePath, fontName = "") {
     const previewDeviceScaleFactor = 2;
     await page.setViewport({ width: previewWidth, height: previewHeight, deviceScaleFactor: previewDeviceScaleFactor});
     const previewBuffer = await page.screenshot({ type: 'jpeg' });
-    const filePreviewName = `docs/images/${fontName}-preview.jpg`;
+    const filePreviewName = `docs/images/${fileBaseName}-preview.jpg`;
     fs.writeFileSync(filePreviewName, previewBuffer);
     console.log(`Image created and saved as \x1b[32;1m${filePreviewName}\x1b[0m! ${filePath}`);
   } finally {

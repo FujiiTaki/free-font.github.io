@@ -104,6 +104,7 @@ async function closePageContext(context) {
           resultData[dataIndex].copyright = copyrightFormat(font.copyright || ttcFonts[0]?.copyright)
           resultData[dataIndex].numGlyphs = font.numGlyphs || ttcFonts[0]?.numGlyphs
         }
+        // 图片文件名内部会将中文转为拼音字母
         await createPosterImage(pageContext.browser, fontPath, fontName);
         fs.writeFileSync("./scripts/data.json", JSON.stringify(resultData, null, 2));
       }
@@ -136,6 +137,7 @@ async function closePageContext(context) {
         data.copyright = copyrightFormat(font.copyright || ttcFonts[0]?.copyright)
         data.numGlyphs = font.numGlyphs || ttcFonts[0]?.numGlyphs
         resultData.push(data);
+        // 图片文件名内部会将中文转为拼音字母
         await createPosterImage(pageContext.browser, filename, fontName);
 
         if ((index + 1) % BROWSER_RESTART_INTERVAL === 0) {
