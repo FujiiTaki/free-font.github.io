@@ -1,7 +1,27 @@
 [
   {
+    "name": "伴旅圓體",
+    "path": "fonts/其他字体/伴旅圓體.ttf",
+    "home": "https://github.com/tomben479/delivlog-rounded",
+    "license": "OFL-1.1",
+    "type": "艺术体",
+    "size": "6.4 MB",
+    "byte": 6399824,
+    "ctime": 1785851351257,
+    "postscriptName": "DelivlogRoundedS2T-Regular",
+    "fullName": "Delivlog Rounded",
+    "familyName": "Delivlog Rounded",
+    "subfamilyName": "Regular",
+    "version": "1.1.0",
+    "copyright": "[Kosugi Maru]\nCopyright (c) 2010 MOTOYA CO.,LTD.            \n\n[Varela Round]\nCopyright (c) 2011-2016 The Varela Round Project Authors (https://github.com/alefalefalef/Varela-Round-Hebrew/), with Reserved Font Names 'Varela' and 'Varela Round'.            \n\n[jf open huninn]\nCopyright (c) 2020-2024 The jf open huninn font is redistributed by justfont Co., Ltd., with Reserved Font Names 'open huninn' and 'huninn' under SIL Open Font License. The Hanzi part of this project was derived from Kosugi Maru under Apache-2.0 (https://www.apache.org/licenses/LICENSE-2.0).\n\n[Delivlog Rounded / 伴旅圓體 / 伴旅圆体]\nSimplified-to-Traditional mappings and font engineering copyright (c) 2026 Delivlog contributors, with Reserved Font Names 'Delivlog Rounded', '伴旅圓體', and '伴旅圆体'.",
+    "numGlyphs": 17942
+  },
+  {
     "name": "粉圓",
     "path": "fonts/其他字体/粉圓.ttf",
+    "home": "https://github.com/justfont/Huninn",
+    "license": "OFL-1.1",
+    "type": "艺术体",
     "size": "4.69 MB",
     "byte": 4688264,
     "ctime": 1785850588899,
@@ -16,6 +36,8 @@
   {
     "name": "Ririgitriz",
     "path": "fonts/english/other/Ririgitriz.ttf",
+    "home": "https://github.com/rinjusu/Ririgitriz",
+    "license": "OFL-1.1",
     "size": "27.2 kB",
     "byte": 27212,
     "ctime": 1785849531321,
