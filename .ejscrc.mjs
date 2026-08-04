@@ -25,22 +25,32 @@ export default {
     "totalBytes": prettyBytes(total),
     "myapp": [
       {
-        "href": "https://apps.apple.com/app/6758053530",
+        "href": "https://wangchujiang.com/dock-lift/",
+        "title": "DockLift: 点击 Dock 应用窗口回到当前屏幕",
+        "image":"dock-lift.png"
+      },
+      {
+        "href": "https://jaywcjlove.github.io/maslink/?id=6766860898",
+        "title": "Zipora: Zip/RAR/7Z 解压工具",
+        "image":"zipora.png"
+      },
+      {
+        "href": "https://jaywcjlove.github.io/maslink/?id=6758053530",
         "title": "Scap: Screenshot & Markup Edit for macOS",
         "image":"scap.png"
       },
       {
-        "href": "https://apps.apple.com/app/6757317079",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6757317079",
         "title": "Screen Test for macOS",
         "image":"screen-test.png"
       },
       {
-        "href": "https://apps.apple.com/app/6755948110",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6755948110",
         "title": "Deskmark for macOS",
         "image":"deskmark.png"
       },
       {
-        "href": "https://apps.apple.com/app/6500434773",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6500434773",
         "title": "Keyzer for macOS",
         "image":"keyzer.png"
       },
@@ -50,12 +60,12 @@ export default {
         "image":"vidwall-hub.png"
       },
       {
-        "href": "https://apps.apple.com/app/VidCrop/6752624705",
+        "href": "https://jaywcjlove.github.io/maslink/?id=VidCrop/6752624705",
         "title": "VidCrop for macOS",
         "image":"vidcrop.png"
       },
       {
-        "href": "https://apps.apple.com/app/Vidwall/6747587746",
+        "href": "https://jaywcjlove.github.io/maslink/?id=Vidwall/6747587746",
         "title": "Vidwall for macOS",
         "image":"vidwall.png"
       },
@@ -65,122 +75,122 @@ export default {
         "image":"mousio-hint.png"
       },
       {
-        "href": "https://apps.apple.com/app/6746747327",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6746747327",
         "title": "Mousio for macOS",
         "image":"mousio.png"
       },
       {
-        "href": "https://apps.apple.com/app/6745227444",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6745227444",
         "title": "Musicer for macOS",
         "image":"musicer.png"
       },
       {
-        "href": "https://apps.apple.com/app/6743841447",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6743841447",
         "title": "Audioer for macOS",
         "image":"audioer.png"
       },
       {
-        "href": "https://apps.apple.com/app/6744690194",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6744690194",
         "title": "FileSentinel for macOS",
         "image":"file-sentinel.png"
       },
       {
-        "href": "https://apps.apple.com/app/6743495172",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6743495172",
         "title": "FocusCursor for macOS",
         "image":"focus-cursor.png"
       },
       {
-        "href": "https://apps.apple.com/app/6742680573",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6742680573",
         "title": "Videoer for macOS",
         "image":"videoer.png"
       },
       {
-        "href": "https://apps.apple.com/app/6740425504",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6740425504",
         "title": "KeyClicker for macOS",
         "image":"key-clicker.png"
       },
       {
-        "href": "https://apps.apple.com/app/6739052447",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6739052447",
         "title": "DayBar for macOS",
         "image":"daybar.png"
       },
       {
-        "href": "https://apps.apple.com/app/6739444407",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6739444407",
         "title": "Iconed for macOS",
         "image":"iconed.png"
       },
       {
-        "href": "https://apps.apple.com/app/6737160756",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6737160756",
         "title": "Menuist for macOS",
         "image":"menuist.png"
       },
       {
-        "href": "https://apps.apple.com/app/6723903021",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6723903021",
         "title": "Paste Quick for macOS",
         "image":"paste-quick.png"
       },
       {
-        "href": "https://apps.apple.com/app/6670696072?platform=mac",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6670696072?platform=mac",
         "title": "Quick RSS for macOS/iOS",
         "image":"quick-rss.png"
       },
       {
-        "href": "https://apps.apple.com/app/6670167443?platform=mac",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6670167443?platform=mac",
         "title": "Web Serve for macOS",
         "image":"web-serve.png"
       },
       {
-        "href": "https://apps.apple.com/app/6503953628",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6503953628",
         "title": "Copybook Generator for macOS",
         "image":"copybook-generator.png"
       },
       {
-        "href": "https://apps.apple.com/app/6471227008",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6471227008",
         "title": "DevTutor for macOS",
         "image":"devtutor.png"
       },
       {
-        "href": "https://apps.apple.com/app/6479819388?platform=mac",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6479819388?platform=mac",
         "title": "RegexMate for macOS/iOS",
         "image":"regex-mate.png"
       },
       {
-        "href": "https://apps.apple.com/app/6479194014?platform=mac",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6479194014?platform=mac",
         "title": "Time Passage for macOS/iOS",
         "image":"time-passage.png"
       },
       {
-        "href": "https://apps.apple.com/app/6478772538",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6478772538",
         "title": "IconizeFolder for macOS",
         "image":"iconize-folder.png"
       },
       {
-        "href": "https://apps.apple.com/app/6478511402?platform=mac",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6478511402?platform=mac",
         "title": "Textsound Saver for macOS/iOS",
         "image":"textsound-saver.png"
       },
       {
-        "href": "https://apps.apple.com/app/6476924627",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6476924627",
         "title": "Create Custom Symbols for macOS",
         "image":"create-custom-symbols.png"
       },
       {
-        "href": "https://apps.apple.com/app/6476452351",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6476452351",
         "title": "DevHub for macOS",
         "image":"devhub.png"
       },
       {
-        "href": "https://apps.apple.com/app/6476400184",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6476400184",
         "title": "Resume Revise for macOS",
         "image":"resume-revise.png"
       },
       {
-        "href": "https://apps.apple.com/app/6472593276",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6472593276",
         "title": "Palette Genius for macOS",
         "image":"palette-genius.png"
       },
       {
-        "href": "https://apps.apple.com/app/6470879005",
+        "href": "https://jaywcjlove.github.io/maslink/?id=6470879005",
         "title": "Symbol Scribe for macOS",
         "image":"symbol-scribe.png"
       }
