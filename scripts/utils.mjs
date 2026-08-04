@@ -39,9 +39,43 @@ const chineseCharacterContent = `
 `;
 
 const englishCharacterContent = `<div class="poem-content" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</div>`
-
+const mahjongCharacterContent = `
+        <article>
+          <div class="poem">
+            <div class="poem-content" style="font-size: 83px;">
+              1m 2m 3m 4m 5m 6m 7m 8m 9m<br/>
+              1p 2p 3p 4p 5p 6p 7p 8p 9p<br/>
+              1s 2s 3s 4s 5s 6s 7s 8s 9s<br/>
+              1z 2z 3z 4z 5z 6z 7z<br/>
+              1. 2. 3. 4. 5. 6. 
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="poem">
+            <div class="poem-content" style="font-size: 83px;">
+              0m 0p 0s 0z<br/>
+              5m* 5p* 5s*<br/><br/>
+              2m= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              5s= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              1z=<br/>
+              1m=*_2m= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              3m= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              4m= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              5m= 6m= 7m= 8m= 9m=
+            </div>
+          </div>
+        </article>
+`;
+const alphabet = `
+      <section>
+        <pre>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</pre>
+        <pre>a b c d e f g h i j k l m n o p q r s t u v w x y z</pre>
+        <pre>0 1 2 3 4 5 6 7 8 9</pre>
+      </section>
+`;
 /** 动态生成字体预览 HTML 内容 */
-const generatePreviewHTMLContent = (fontPath, fileName, character = chineseCharacterContent) => `<!DOCTYPE html>
+const generatePreviewHTMLContent = (fontPath, fileName, character = chineseCharacterContent, footer = alphabet) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -72,11 +106,7 @@ const generatePreviewHTMLContent = (fontPath, fileName, character = chineseChara
     <div>
       <div>「${fileName}」</div>
       <main>${character}</main>
-      <section>
-        <pre>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</pre>
-        <pre>a b c d e f g h i j k l m n o p q r s t u v w x y z</pre>
-        <pre>0 1 2 3 4 5 6 7 8 9</pre>
-      </section>
+      ${footer}
     </div>
   </div>
 </body>
@@ -85,7 +115,7 @@ const generatePreviewHTMLContent = (fontPath, fileName, character = chineseChara
 `;
 
 /** 动态生成 HTML 内容 */
-export const generateHTMLContent = (fontPath, fileName) => `<!DOCTYPE html><html lang="en">
+export const generateHTMLContent = (fontPath, fileName, demo) => `<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,7 +145,7 @@ export const generateHTMLContent = (fontPath, fileName) => `<!DOCTYPE html><html
 <body>
   <div class="poster">
     <div>${fileName}</div>
-    <div>Hello World! 123</div>
+    <div>${demo != "" ? demo : "Hello World! 123"}</div>
   </div>
 </body>
 </html>
@@ -128,7 +158,11 @@ export async function createPosterImage(browser, filePath, fontName = "") {
   /// 英文字体
   const isEnglish = fontPath.split(path.sep).includes("english");
   const fontText = isEnglish ? fontName : (containsNoChineseCharacters(fontName) ? `${fontName}字体` : fontName);
-  const htmlContent = generateHTMLContent(fontPath, fontText.replace(/-/g, " "));
+  let demo = "<div>Hello World! 123</div>";
+  if (fontPath.includes("麻将字体")) {
+    demo = "<div style=\"font-size: 43px;\">7m7m7m2p3p4p8p8p8p4s</div>";
+  }
+  const htmlContent = generateHTMLContent(fontPath, fontText.replace(/-/g, " "), demo);
   fs.writeFileSync(htmlFilePath, htmlContent);
 
   const fileHTMLPath = `file:${htmlFilePath}`;
@@ -144,7 +178,19 @@ export async function createPosterImage(browser, filePath, fontName = "") {
     console.log(`Image created and saved as \x1b[32;1m${fileName}\x1b[0m! ${filePath}`);
 
     const htmlPreviewFilePath = path.join(__dirname, 'preview.html');
-    const htmlPreviewContent = generatePreviewHTMLContent(fontPath, fontText.replace(/-/g, " "), isEnglish ? englishCharacterContent : chineseCharacterContent);
+
+    let demoContent = "";
+    let demoAlphabetContent = alphabet;
+    if (isEnglish) {
+      demoContent = englishCharacterContent;
+    } else if (fontPath.includes("麻将字体")) {
+      demoContent = mahjongCharacterContent;
+      demoAlphabetContent = "";
+    } else {
+      demoContent = chineseCharacterContent;
+    }
+
+    const htmlPreviewContent = generatePreviewHTMLContent(fontPath, fontText.replace(/-/g, " "), demoContent, demoAlphabetContent);
     fs.writeFileSync(htmlPreviewFilePath, htmlPreviewContent);
     const filePreviewHTMLPath = `file:${htmlPreviewFilePath}`;
     await page.goto(filePreviewHTMLPath, { waitUntil: 'networkidle2' });
