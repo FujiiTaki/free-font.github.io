@@ -1,5 +1,37 @@
 [
   {
+    "name": "CozetteCrossedSevenVectorBold",
+    "path": "fonts/english/Cozette/CozetteCrossedSevenVectorBold.ttf",
+    "home": "https://github.com/slavfox/Cozette",
+    "license": "IPA-1.0",
+    "size": "568 kB",
+    "byte": 568364,
+    "ctime": 1785826184077,
+    "postscriptName": "CozetteCrossedSevenVectorBold",
+    "fullName": "CozetteCrossedSevenVectorBold",
+    "familyName": "CozetteCrossedSevenVectorBold",
+    "subfamilyName": "Medium",
+    "version": null,
+    "copyright": "(c) 2020-2025 Ines &lt;ines@moonwit.ch>",
+    "numGlyphs": 6047
+  },
+  {
+    "name": "CozetteCrossedSevenVector",
+    "path": "fonts/english/Cozette/CozetteCrossedSevenVector.ttf",
+    "home": "https://github.com/slavfox/Cozette",
+    "license": "IPA-1.0",
+    "size": "650 kB",
+    "byte": 649676,
+    "ctime": 1785826184065,
+    "postscriptName": "CozetteCrossedSevenVector",
+    "fullName": "CozetteCrossedSevenVector",
+    "familyName": "CozetteCrossedSevenVector",
+    "subfamilyName": "Medium",
+    "version": null,
+    "copyright": "(c) 2020-2025 Ines &lt;ines@moonwit.ch>",
+    "numGlyphs": 6047
+  },
+  {
     "name": "白路彤彤手写体",
     "path": "fonts/其他字体/白路彤彤手写体.ttf",
     "home": "https://www.zcool.com.cn/work/ZNjkxNjU3MzI=.html",
