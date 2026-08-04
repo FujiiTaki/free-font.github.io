@@ -1,5 +1,22 @@
 [
   {
+    "name": "手寫體",
+    "path": "fonts/其他字体/手寫體.ttf",
+    "home": "https://github.com/charlie-moomoo/CharlieHandwriting",
+    "license": "OFL-1.1",
+    "type": "手绘体",
+    "size": "4.37 MB",
+    "byte": 4368428,
+    "ctime": 1785848611766,
+    "postscriptName": "CharlieHandwriting",
+    "fullName": "CharlieHandwriting",
+    "familyName": "CharlieHandwriting",
+    "subfamilyName": "Book",
+    "version": null,
+    "copyright": "Created by CharlieMoomoo\nCopyright (C) 2021-2026 CharlieHandwriting",
+    "numGlyphs": 4802
+  },
+  {
     "name": "多彩立直麻将字体",
     "path": "fonts/其他字体/麻将字体/多彩立直麻将字体.otf",
     "home": "https://github.com/rutopio/mahjong-font",
